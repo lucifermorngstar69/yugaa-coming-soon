@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUGAA is coming</title>
+<meta name="description" content="YUGAA — For every era, a timepiece. Launching soon.">
+<meta property="og:title" content="YUGAA is coming">
+<meta property="og:description" content="For every era, a timepiece. Launching soon.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;&gt;&lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;38&quot; fill=&quot;none&quot; stroke=&quot;%23C6A75E&quot; stroke-width=&quot;7&quot;/&gt;&lt;circle cx=&quot;84&quot; cy=&quot;34&quot; r=&quot;7&quot; fill=&quot;%23C6A75E&quot;/&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+<style>
+:root{--gold:#C6A75E;--gold-bright:#E6C877;--ivory:#F2F0EB;--muted:#7d7d85}
+*{margin:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#000;color:var(--ivory);font-family:'Inter',sans-serif;overflow-x:hidden;overflow-y:auto;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
+
+/* ===== cosmic background (recreated; your own image at assets/coming-bg.jpg overrides it) ===== */
+.bg{position:fixed;inset:0;z-index:0;background:
+  radial-gradient(120% 80% at 50% -10%, #1a1e26 0%, #0a0b0f 40%, #000 75%),
+  #000}
+.bg .glow{position:absolute;top:-8%;left:50%;transform:translateX(-50%);width:36vw;height:36vw;border-radius:50%;
+  background:radial-gradient(circle, rgba(210,225,255,.55), rgba(120,140,180,.12) 45%, transparent 65%);filter:blur(6px)}
+.bg .horizon{position:absolute;top:50%;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent, rgba(200,220,255,.75) 45%, #fff 50%, rgba(200,220,255,.75) 55%, transparent);
+  box-shadow:0 0 40px 8px rgba(150,180,230,.25)}
+.bg .eclipse{position:absolute;top:calc(50% - 7vw);left:50%;transform:translateX(-50%);width:9vw;height:9vw;border-radius:50%;
+  background:#05060a;box-shadow:0 0 3px 1px rgba(220,235,255,.9), 0 0 60px 12px rgba(150,180,230,.35);border:1px solid rgba(220,235,255,.5)}
+.bg .orb{position:absolute;left:50%;transform:translateX(-50%);border:1px solid rgba(210,225,255,.55);border-radius:50%}
+.bg .orb.a{top:14%;width:14px;height:14px;box-shadow:0 0 10px rgba(210,225,255,.5)}
+.bg .orb.b{top:30%;width:44px;height:44px;box-shadow:0 0 14px rgba(210,225,255,.35);border-color:rgba(210,225,255,.4)}
+.bg .veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, transparent 40%, rgba(0,0,0,.55) 100%)}
+.bgphoto{position:fixed;inset:0;z-index:1;background-image:url("assets/coming-bg.jpg");background-size:cover;background-position:center;opacity:.92}
+.bgphoto::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, transparent 45%, rgba(0,0,0,.5) 100%)}
+.blackout{position:fixed;z-index:2;top:-5%;left:50%;transform:translateX(-50%);width:62%;height:82%;pointer-events:none;background:radial-gradient(ellipse 46% 58% at 50% 40%, #000 0%, #000 52%, rgba(0,0,0,0) 76%)}
+
+/* ===== content ===== */
+.wrap{position:relative;z-index:3;padding:64px 28px 40px}
+.logo{width:min(46vw,320px);height:auto;margin:-0.5cm auto 4px;position:relative;top:-45px;filter:drop-shadow(0 0 55px rgba(198,167,94,.3))}
+.word{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,8vw,92px);font-weight:600;letter-spacing:.2em;line-height:1;padding-left:.2em;
+  background:linear-gradient(180deg,#F3DFA6,#C6A75E 55%,#9A7C36);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:22px}
+.coming{font-size:clamp(13px,2.2vw,22px);letter-spacing:.5em;text-transform:uppercase;color:var(--ivory);font-weight:500;padding-left:.5em;margin-top:-108px;margin-bottom:34px;opacity:.9}
+.yugaa-word{background:linear-gradient(180deg,#F3DFA6,#C6A75E 55%,#9A7C36);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600;font-style:italic}
+.count{display:flex;align-items:flex-start;justify-content:center;gap:clamp(2px,0.7vw,8px);max-width:min(34vw,360px);margin:0 auto}
+.unit{min-width:clamp(26px,4.4vw,58px)}
+.unit .num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(21px,4.6vw,52px);line-height:.9;font-variant-numeric:tabular-nums}
+.unit .lbl{font-size:clamp(8px,1.1vw,12px);letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:11px}
+.sep{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,3.2vw,38px);line-height:.9;color:var(--gold);opacity:.55;padding-top:.05em}
+.tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,2.2vw,23px);color:var(--gold);margin-top:-16px}
+.notify{margin:30px auto 0;display:flex;max-width:400px;border:1px solid rgba(198,167,94,.4);border-radius:3px;overflow:hidden;background:rgba(255,255,255,.03)}
+.notify input{flex:1;background:transparent;border:none;color:var(--ivory);padding:13px 16px;font-size:14px;font-family:'Inter'}
+.notify input:focus{outline:none}.notify input::placeholder{color:var(--muted)}
+.notify button{background:var(--gold);color:#0a0a0c;border:none;padding:0 20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:.2s}
+.notify button:hover{background:var(--gold-bright)}
+.msg{font-size:13px;color:var(--gold);margin-top:11px;min-height:18px}
+.social{margin-top:95px;display:flex;gap:20px;justify-content:center}
+.social a{color:var(--gold);transition:.2s}.social a:hover{color:var(--gold-bright)}.social svg{width:21px;height:21px}
+.enter{margin-top:26px;display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:13px 32px;border-radius:3px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:.2s}
+.enter:hover{background:var(--gold);color:#0a0a0c}
+@media(max-width:640px){.count{gap:4px}.sep{padding-top:.15em}.unit .lbl{letter-spacing:.12em}}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="glow"></div><div class="orb a"></div><div class="orb b"></div>
+  <div class="horizon"></div><div class="eclipse"></div><div class="veil"></div>
+</div>
+<div class="bgphoto"></div>
+<div class="blackout"></div>
+
+<div class="wrap">
+  <img class="logo" src="assets/logo.png" alt="YUGAA ouroboros clock">
+  <div class="coming"><span class="yugaa-word">YUGAA</span> is coming</div>
+
+  <div class="tag">For every era, a timepiece.</div>
+
+  <div class="count" id="count">
+    <div class="unit"><div class="num" id="mo">00</div><div class="lbl">Months</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="num" id="da">00</div><div class="lbl">Days</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="num" id="ho">00</div><div class="lbl">Hours</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="num" id="mi">00</div><div class="lbl">Min</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="num" id="se">00</div><div class="lbl">Sec</div></div>
+  </div>
+
+  <div class="social">
+    <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+    <a href="https://youtube.com" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.5 9.2l4.2 2.8-4.2 2.8z" fill="currentColor" stroke="none"></path></svg></a>
+    <a href="mailto:hello@yugaa.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2.5"></rect><path d="M3.5 6.5l8.5 6 8.5-6"></path></svg></a>
+  </div>
+</div>
+
+<script>
+// ===== Launch date = 3 months from today (fixed). Change this if your date shifts. =====
+const LAUNCH = new Date("2026-12-09T00:00:00+05:30");
+// =======================================================================================
+const pad = n => String(n).padStart(2,'0');
+function breakdown(target){
+  const now = new Date();
+  if (target <= now) return null;
+  let months = 0, cur = new Date(now);
+  while (true){ const nx = new Date(cur); nx.setMonth(nx.getMonth()+1); if (nx <= target){ cur = nx; months++; } else break; }
+  let ms = target - cur;
+  const D=86400000,H=3600000,M=60000;
+  const days=Math.floor(ms/D); ms-=days*D;
+  const hours=Math.floor(ms/H); ms-=hours*H;
+  const mins=Math.floor(ms/M); ms-=mins*M;
+  const secs=Math.floor(ms/1000);
+  return {months,days,hours,mins,secs};
+}
+function tick(){
+  const b = breakdown(LAUNCH);
+  if(!b){ arrived(); return; }
+  mo.textContent=pad(b.months); da.textContent=pad(b.days); ho.textContent=pad(b.hours); mi.textContent=pad(b.mins); se.textContent=pad(b.secs);
+}
+function arrived(){
+  document.getElementById('count').innerHTML='<div style="font-family:\'Cormorant Garamond\',serif;font-size:clamp(28px,6vw,60px);color:var(--gold)">The wait is over.</div>';
+  const w=document.querySelector('.wrap');
+  if(!document.querySelector('.enter')){ const a=document.createElement('a'); a.className='enter'; a.href='index.html'; a.textContent='Enter YUGAA'; w.appendChild(a); }
+  clearInterval(window._t);
+}
+function notifyMe(e){
+  e.preventDefault();
+  document.getElementById('email').value='';
+  document.getElementById('msg').textContent='Thank you — we’ll let you know the moment YUGAA arrives.';
+  return false; // NOTE: connect Mailchimp/Google Form to actually store emails
+}
+tick(); window._t=setInterval(tick,1000);
+</script>
+
+
+</body></html>
